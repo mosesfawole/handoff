@@ -526,13 +526,14 @@ export class HandoffService {
               (e) =>
                 e.type === "device_coverage" && e.detail === event.deviceId,
             )
-            .map((e) => e.observedAt ?? e.at)
-            .sort()
-            .at(-1) ?? s.integrations.ring.lastVerifiedAt;
-        if (
-          !priorDeviceTime ||
-          Date.parse(event.observedAt) >= Date.parse(priorDeviceTime)
-        ) {
+            .map((e) => Date.parse(e.observedAt ?? e.at))
+            .reduce(
+              (latest, time) => Math.max(latest, time),
+              s.integrations.ring.lastVerifiedAt
+                ? Date.parse(s.integrations.ring.lastVerifiedAt)
+                : -Infinity,
+            );
+        if (Date.parse(event.observedAt) >= priorDeviceTime) {
           const device = s.integrations.ring.devices.find(
             (d) => d.id === event.deviceId,
           )!;

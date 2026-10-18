@@ -250,6 +250,62 @@ describe("real SQLite workflow transactions", () => {
       "offline",
     );
   });
+  it("a delayed coverage webhook cannot overwrite a newer sync after an earlier webhook", () => {
+    let now = "2026-10-18T07:12:00.000Z";
+    const { service } = create(() => now);
+    service.enterLive();
+    const devices = [
+      { id: "front", name: "Front door", coverage: "online" as const },
+    ];
+    const integration = {
+      configured: true,
+      webhookConfigured: true,
+      status: "connected" as const,
+      lastSyncAt: now,
+      lastVerifiedAt: now,
+      error: null,
+      devices,
+    };
+    service.ingestRing([], devices, integration);
+    now = "2026-10-18T07:13:00.000Z";
+    service.ingestWebhook({
+      eventId: "front-offline-first",
+      deviceId: "front",
+      observedAt: now,
+      coverage: "offline",
+    });
+    expect(service.state().integrations.ring.devices[0].coverage).toBe(
+      "offline",
+    );
+
+    now = "2026-10-18T07:15:00.000Z";
+    service.ingestRing([], devices, {
+      ...integration,
+      lastSyncAt: now,
+      lastVerifiedAt: now,
+    });
+    service.ingestWebhook({
+      eventId: "front-offline-delayed",
+      deviceId: "front",
+      observedAt: "2026-10-18T07:14:00.000Z",
+      coverage: "offline",
+    });
+    const state = service.state();
+    expect(state.visits[0].coverage.status).toBe("online");
+    expect(state.timeline).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          type: "webhook",
+          detail: "front-offline-delayed",
+          observedAt: "2026-10-18T07:14:00.000Z",
+        }),
+      ]),
+    );
+    expect(state.integrations.ring.devices[0].coverage).toBe("online");
+    expect(
+      state.timeline.filter((e) => e.type === "device_coverage"),
+    ).toHaveLength(1);
+  });
   it.each(["human", "doorstep"])(
     "schedule edits cannot attach old %s evidence to a new expected window",
     (evidence) => {
