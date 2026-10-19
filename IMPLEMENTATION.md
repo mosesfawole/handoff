@@ -1,5 +1,7 @@
 # Handoff Implementation Plan
 
+> **Historical build plan — 18 October 2026.** The original checklist and phase-specific constraints below are preserved. Its no-publish instruction applied to that local build phase; source publication was subsequently authorized and completed at [mosesfawole/handoff](https://github.com/mosesfawole/handoff). Current behavior, verification and remaining external steps are documented in the [README](README.md), [validation record](docs/validation.md) and [preflight](docs/submission-preflight.md).
+
 > **For agentic workers:** Use superpowers:subagent-driven-development to implement this plan task by task. Requirements are in the approved proposal. Steps use checkbox syntax for tracking.
 
 **Goal:** Deliver a locally runnable, polished Handoff prototype with persistent visit evidence, explicit confirmations, accountable backup tasks, a Ring adapter, reproducible replay, and a working MCP fallback.

@@ -4,9 +4,20 @@
 
 This is a locally runnable prototype with fictional replay, persistent SQLite records, family/resident/helper/coordinator demo views, a server-side Ring adapter, and a real Model Context Protocol (MCP) endpoint. A doorstep event never proves identity, completed care, or safety. Demo roles are views, not production authentication.
 
+Public source: [mosesfawole/handoff](https://github.com/mosesfawole/handoff), default branch `handoff-build`, under the MIT license. Evaluation is available by cloning or downloading the source and running the fictional replay locally; there is no hosted public application yet. A public demo video and competition submission remain pending.
+
 ## Run locally
 
 Use **Node.js 24** and npm. Node's built-in SQLite is used; its experimental warning is narrowly suppressed by the supplied npm commands. Run these commands from this directory:
+
+To obtain the source first:
+
+```sh
+git clone https://github.com/mosesfawole/handoff.git
+cd handoff
+```
+
+Then install, build and start:
 
 ```sh
 npm ci
@@ -91,4 +102,4 @@ Browser tests start a separate replay server on 3101 and use `../../work/handoff
 - [Design decisions](docs/decisions.md), [approved design](DESIGN.md), and [implementation plan](IMPLEMENTATION.md)
 - [MIT license](LICENSE)
 
-There is no external messaging, emergency dispatch, medical assessment, facial recognition, production household authentication, deployed public host, or automatic Ring token renewal. User interviews, demand validation, and clinical outcomes have not been established. Public repository/video/hosting and final competition submission remain separate, unfinished steps.
+There is no external messaging, emergency dispatch, medical assessment, facial recognition, production household authentication, deployed public host, or automatic Ring token renewal. User interviews, demand validation, and clinical outcomes have not been established. The source repository is public; public video, hosting and final competition submission remain unfinished steps.

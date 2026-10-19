@@ -5,10 +5,10 @@ Deadline: **23 October 2026, 19:00 UTC / 21:00 Europe/Berlin**. Use an internal 
 | Item | Current state / final action |
 | --- | --- |
 | Working application | Local source/replay implemented; review corrections approved; final 29 unit tests, 13 browser tests and build/typecheck passed |
-| Required Ring technology | Official discovery/status/history and `on_demand` event ingestion evidenced; record the actual integration in the video and describe event type accurately |
-| Source access | **Pending URL**. Provide all source/assets/run instructions. Use a licensed public GitHub repository or a private repository shared with the required reviewers, as permitted by the rules |
-| Public video | **Pending URL**. Public English YouTube/Vimeo, strictly under three minutes; check signed-out access, audio and duration |
-| Evaluation access | **Pending URL/access instructions**. Keep the project accessible through judging; judges should not have to provide their own Playground token. Fictional replay is the default |
+| Required Ring technology | Official discovery/status/history and `on_demand` event ingestion evidenced. Fresh API footage awaits authorized Amazon sign-in and renewal of the expired Playground token; describe the actual event type accurately |
+| Source access | [https://github.com/mosesfawole/handoff](https://github.com/mosesfawole/handoff) — public, MIT licensed, default branch `handoff-build`; source/assets/run instructions included |
+| Public video | **Pending URL**. Local preparation underway; final English YouTube/Vimeo video must be public and strictly under three minutes. Check signed-out access, audio and duration |
+| Evaluation access | Local evaluation from public source: follow [README setup](../README.md#run-locally) and run fictional replay without a judge-supplied token. No hosted public application yet; maintain source access through judging |
 | Description and stack | Review submission-draft.md against the final implementation; remove pending fields only when completed |
 | Tracks/challenges | Confirm Ring selection. Do not claim AWS Builder or Open Source mini-challenge eligibility without their additional qualifying work |
 | Feedback fields | Copy specific, observed entries from developer-feedback.md for each tool/API/SDK used |
@@ -27,4 +27,4 @@ The four equally weighted criteria are technical implementation, design, potenti
 - [Strong submission tips](https://amazonappdev2026.devpost.com/updates/46538-strong-submission-tips)
 - [Ring API documentation](https://developer.amazon.com/docs/ring/api-documentation.html)
 
-Public repository, video, demo URL, participant eligibility and final form fields require the entrant's final completion. This file is a checklist, not a submission or eligibility certificate.
+Source publication is complete. Public video, any hosted demo URL, participant eligibility and final form fields still require completion. This file is a checklist, not a submission or eligibility certificate.

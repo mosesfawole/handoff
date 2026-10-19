@@ -1,6 +1,6 @@
 # Submission draft — Handoff
 
-**Status:** Draft. Not published or submitted. Final repository, video and evaluation-access links are pending; use the preflight before copying this into an entry.
+**Status:** Draft entry; not submitted. The [source repository is public](https://github.com/mosesfawole/handoff), with local evaluation instructions in the README. A hosted application and public video are not yet available; use the preflight before copying this into an entry.
 
 **Tagline:** When a care visit is unconfirmed, make the next action somebody's responsibility.
 
@@ -42,11 +42,13 @@ No user interviews, pilots, clinical effects, adoption figures or willingness-to
 | --- | --- |
 | Project name | Handoff |
 | Main track | Ring proposed; confirm current entry requirements and final official API demonstration |
-| Repository | **Pending** — public with license, or private with required reviewer access under the rules |
-| Public English YouTube/Vimeo video under three minutes | **Pending** |
-| Working evaluation access / demo URL and instructions | **Pending**; local replay is available from source |
+| Repository | [https://github.com/mosesfawole/handoff](https://github.com/mosesfawole/handoff) — public, MIT licensed; default branch `handoff-build` |
+| Public English YouTube/Vimeo video under three minutes | **Pending**; local video preparation is underway |
+| Working evaluation access / demo URL and instructions | Clone/download the public source and follow [README setup](../README.md#run-locally). Fictional replay requires no Ring token. No hosted application URL is available |
 | Tools/API/SDK feedback | Use the specific entries in developer-feedback.md |
 | AWS Builder mini challenge | Not claimed; no qualifying AWS/Kiro contribution established |
 | Open Source mini challenge | Not claimed; the main MIT license alone is not the additional identifiable contribution |
 
 Install/run instructions are in the README. No submission has been made, and no prize or track eligibility is guaranteed by this draft.
+
+For fresh official API footage, the prior Playground token has expired and authorized Amazon sign-in/token renewal is required. The sanitized historical integration evidence remains valid; it is not a claim that a fresh video scene has been captured.

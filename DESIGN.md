@@ -1,5 +1,7 @@
 # Handoff — project proposal for the Amazon Developer Hackathon
 
+> **Historical design snapshot — 18 October 2026.** The original proposal below is preserved, including its then-current status and assumptions. Implementation and source publication have since progressed; see the [README](README.md) and [validation record](docs/validation.md) for current status. The public repository is [mosesfawole/handoff](https://github.com/mosesfawole/handoff).
+
 Prepared 18 October 2026. Status: researched design proposal; application implementation has not started. Project name is provisional.
 
 **Recommendation:** Build Handoff for the Ring track: a consent-based service that turns an expected home-care visit into a tracked commitment, detects when confirmation is missing, and follows an agreed backup plan until someone accepts responsibility and records the outcome.
