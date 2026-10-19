@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type {
   ActorRole,
   AppState,
@@ -46,6 +46,8 @@ export default function App() {
   const [page, setPage] = useState<Page>("today");
   const [role, setRole] = useState<ActorRole>("family");
   const [dialog, setDialog] = useState<Dialog | null>(null);
+  const [dialogTarget, setDialogTarget] = useState<string | null>(null);
+  const streamVersion = useRef(0);
   const [pendingPlan, setPendingPlan] = useState<Command | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -58,6 +60,39 @@ export default function App() {
   const [compact, setCompact] = useState(
     () => window.matchMedia("(max-width: 980px)").matches,
   );
+  const currentVisit = state?.visits.find((v) => v.id === state.activeVisitId);
+  const recordContext = JSON.stringify([
+    state?.mode,
+    state?.household.id,
+    state?.activeVisitId,
+    state?.timeline.findLast((entry) => entry.type === "scenario")?.id,
+    currentVisit?.task?.id,
+    currentVisit?.task?.status,
+    currentVisit?.task?.ownerId,
+  ]);
+  const dialogMatches = dialog === "reset" || dialogTarget === recordContext;
+  function receiveResponse(next: AppState, requestedAtStreamVersion: number) {
+    setState((previous) => {
+      if (!previous) return next;
+      if (previous.mode === next.mode)
+        return next.revision >= previous.revision ? next : previous;
+      // Revisions belong to each mode. A response begun before a newer stream
+      // update cannot switch the household back to its old mode.
+      return requestedAtStreamVersion === streamVersion.current ? next : previous;
+    });
+  }
+  function refreshState() {
+    const version = streamVersion.current;
+    void api.state().then((next) => receiveResponse(next, version))
+      .catch((e) => setError(e.message));
+  }
+  useEffect(() => {
+    if (dialog && !dialogMatches) {
+      setDialog(null);
+      setPendingPlan(null);
+      if (!busy) setNotice("The visit changed. Review the latest record before acting.");
+    }
+  }, [dialog, dialogMatches, busy]);
   useEffect(() => {
     const query = window.matchMedia("(max-width: 980px)");
     const update = () => setCompact(query.matches);
@@ -65,21 +100,11 @@ export default function App() {
     return () => query.removeEventListener("change", update);
   }, []);
   useEffect(() => {
-    void api
-      .state()
-      .then((next) =>
-        setState((previous) =>
-          !previous ||
-          previous.mode !== next.mode ||
-          next.revision >= previous.revision
-            ? next
-            : previous,
-        ),
-      )
-      .catch((e) => setError(e.message));
+    refreshState();
     const events = new EventSource("/api/events");
     events.addEventListener("state", (event) => {
       const next = JSON.parse((event as MessageEvent).data) as AppState;
+      streamVersion.current++;
       setState((previous) =>
         !previous ||
         previous.mode !== next.mode ||
@@ -107,9 +132,10 @@ export default function App() {
     setBusy(true);
     setError(null);
     setNotice(null);
+    const version = streamVersion.current;
     try {
       const next = await action();
-      setState(next);
+      receiveResponse(next, version);
       if (message) setNotice(message);
       if (close) setDialog(null);
     } catch (e) {
@@ -123,6 +149,7 @@ export default function App() {
   function open(next: Dialog) {
     setError(null);
     setNotice(null);
+    setDialogTarget(recordContext);
     setDialog(next);
   }
   function navigate(next: Page) {
@@ -143,12 +170,7 @@ export default function App() {
         {error && (
           <button
             className="button primary"
-            onClick={() =>
-              void api
-                .state()
-                .then(setState)
-                .catch((e) => setError(e.message))
-            }
+            onClick={refreshState}
           >
             Try again
           </button>
@@ -177,6 +199,11 @@ export default function App() {
     (task.ownerId === actor.id || role === "coordinator");
   const status = statusLabel[visit.status];
   const resolved = visit.status === "resolved";
+  const latestAccount = visit.statements.findLast(
+    (statement) => statement.kind === "outcome" || statement.kind === "confirmed" || statement.kind === "not_happened",
+  );
+  const originalVisitConfirmed = resolved &&
+    (latestAccount?.kind === "confirmed" || latestAccount?.outcome === "visit_confirmed");
   const title = resolved
     ? "An outcome, carried through."
     : visit.status === "disputed"
@@ -210,7 +237,8 @@ export default function App() {
     plan: "Save plan",
   };
   function submit(form: FormData) {
-    if (!dialog || !visit) return;
+    if (!dialog || !visit || !dialogMatches) return;
+    if ((dialog === "claim" || dialog === "outcome" || dialog === "release") && !task) return;
     const base = { actorId: actor.id, visitId: visit.id };
     const note = String(form.get("note") ?? "").trim();
     const eta = () =>
@@ -228,21 +256,21 @@ export default function App() {
       return;
     }
     let command: Command;
-    if (dialog === "claim")
-      command = { type: "claim_task", ...base, taskId: task!.id, eta: eta() };
-    else if (dialog === "outcome")
+    if (dialog === "claim" && task)
+      command = { type: "claim_task", ...base, taskId: task.id, eta: eta() };
+    else if (dialog === "outcome" && task)
       command = {
         type: "resolve_task",
         ...base,
-        taskId: task!.id,
+        taskId: task.id,
         note,
         outcome: String(form.get("outcome")) as
           | "visit_confirmed"
           | "backup_completed"
           | "follow_up_recorded",
       };
-    else if (dialog === "release")
-      command = { type: "release_task", ...base, taskId: task!.id, note };
+    else if (dialog === "release" && task)
+      command = { type: "release_task", ...base, taskId: task.id, note };
     else if (dialog === "delay")
       command = { type: "report_delay", ...base, note, eta: eta() };
     else
@@ -625,13 +653,7 @@ export default function App() {
                         key={step}
                         className={
                           i === 0 ||
-                          (i === 1 &&
-                            visit.status !== "disputed" &&
-                            visit.statements.some(
-                              (s) =>
-                                s.kind === "confirmed" ||
-                                s.outcome === "visit_confirmed",
-                            )) ||
+                          (i === 1 && originalVisitConfirmed) ||
                           (i === 2 && task?.status === "resolved") ||
                           (i === 3 && resolved)
                             ? "done"
@@ -1090,7 +1112,7 @@ export default function App() {
           </button>
         ))}
       </nav>
-      {dialog && (
+      {dialog && dialogMatches && (
         <Modal
           key={dialog}
           title={modalTitles[dialog]}
@@ -1117,7 +1139,7 @@ export default function App() {
               </div>
             </div>
           )}
-          {dialog === "claim" && (
+          {dialog === "claim" && task && (
             <>
               <p>
                 Accepting gives this follow-up one owner. You will record the
@@ -1134,7 +1156,7 @@ export default function App() {
               </label>
               <p className="field-help">
                 Today, Berlin time. ETA must be within the next four hours. The
-                agreed response deadline remains {time(task!.deadline)}.
+                agreed response deadline remains {time(task.deadline)}.
               </p>
             </>
           )}
