@@ -1,0 +1,30 @@
+{
+  "inspectedAt": "2026-10-19T06:05:28.869Z",
+  "method": "Read-only inspection of saved local live snapshot; no new Ring request or simulator action.",
+  "officialApiEvidence": {
+    "checkedAt": "2026-10-19T05:51:24.186Z",
+    "officialBase": "https://api.amazonvision.com",
+    "deviceCount": 1,
+    "events": [
+      {
+        "eventType": "on_demand",
+        "observedAt": "2026-10-19T05:47:14.040Z"
+      }
+    ]
+  },
+  "savedAppState": {
+    "mode": "live",
+    "lastVerifiedAt": "2026-10-19T05:48:18.871Z",
+    "connectionStatus": "connected",
+    "deviceCount": 1,
+    "ringObservations": [
+      {
+        "type": "unknown",
+        "source": "ring",
+        "observedAt": "2026-10-19T05:47:14.040Z",
+        "receivedAt": "2026-10-19T05:48:18.871Z"
+      }
+    ]
+  },
+  "limitation": "Official history reported on_demand. Handoff conservatively stores it as unknown activity. This is evidence of authenticated event ingestion, not proof of motion, a doorstep visitor, completed care, or a public webhook delivery."
+}
