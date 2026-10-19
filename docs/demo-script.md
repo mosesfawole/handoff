@@ -1,8 +1,8 @@
 # Handoff — 2:40 recording script
 
-This is a recording plan, not evidence that a video has been produced. Use fictional participants throughout and record the English narration with a public YouTube/Vimeo cut shorter than three minutes. Hide credentials and account details before recording.
+The English narrated demonstration has been produced and verified locally at **160 seconds (2:40)**. The delivered file is `Handoff-demo.mp4`, SHA-256 `cca25b56fdc61a27188ddcc60ffa1636e10b7ed1ad2a91c5cd4a0b2c82e6a59d`. The media file is distributed separately from this source repository. Public YouTube/Vimeo upload remains pending; no public video URL has been verified. The script and preparation notes below remain available for reproduction.
 
-Fresh official API verification succeeded on 19 October at 07:30:06.555 UTC, and actual integration footage/screens have been captured. The check returned one online Playground device and the same `on_demand` history event observed at 05:47:14.040 UTC; the isolated application retained its `unknown` classification. Do not label that event new motion or a visitor, or substitute the homemade replay for the official simulator/API. The 160-second narrated walkthrough is being assembled locally; final public video delivery remains pending. See the [sanitized fresh trace](evidence/fresh-ring-evidence.json).
+Fresh official API verification succeeded on 19 October at 07:30:06.555 UTC, and actual integration footage/screens were captured for the completed local video. The check returned one online Playground device and the same `on_demand` history event observed at 05:47:14.040 UTC; the isolated application retained its `unknown` classification. Do not label that event new motion or a visitor, or substitute the homemade replay for the official simulator/API. See the [sanitized fresh trace](evidence/fresh-ring-evidence.json).
 
 | Time | Screen action | Suggested narration |
 | --- | --- | --- |
@@ -14,12 +14,12 @@ Fresh official API verification succeeded on 19 October at 07:30:06.555 UTC, and
 | 2:00–2:23 | Replay scenario → Differing statements → Reset replay → Start fictional replay. Coordinator → Resolve disagreement; show outcome options and a brief note, then Save outcome. | “When accounts differ, the record stays disputed until the owner or coordinator records an explicit outcome. Handoff preserves the earlier statements rather than choosing an AI winner.” |
 | 2:23–2:40 | Receipt → Download receipt; show saved receipt briefly. End on Today or Receipt. | “The receipt shows what was expected, what was observed, who took responsibility, and the outcome they recorded. The local replay is reproducible, and the same service is available through real MCP tools.” |
 
-## Recording preparation
+## Recording preparation for another take
 
 - Build and start the application; use the exact control names above. Keep one known replay reset before each take.
 - Prepare the two short outcome notes in advance. Use cuts between scenes instead of speaking faster to fit loading or typing time.
 - Capture the official integration separately from replay. If demonstrating a supported motion/doorbell event, confirm that exact type in the actual evidence before describing it.
 - Do not show a populated `.env`, bearer header, account identifiers, or private household receipt. The browser integration status is redacted.
-- Keep titles/captions in English, verify the finished duration is below three minutes, and ensure the public video URL works signed out. Final video URL: **pending**.
+- Keep titles/captions in English and verify the finished duration is below three minutes. The completed local cut is 160 seconds. After upload, ensure the public video URL works signed out. Final video URL: **pending**.
 
 Optional: replace a few seconds of receipt footage with Integrations → Connect local MCP → `read_receipt` → Run read tool. Label it “Local MCP demonstration”; do not claim an Alexa session. Keep the total duration at 2:40.

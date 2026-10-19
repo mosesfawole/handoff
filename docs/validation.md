@@ -37,7 +37,7 @@ All three were corrected. The confirmation indicator now follows the effective s
 
 The package includes the [sanitized recovered integration trace](evidence/recovered-ring-evidence.json), with event type, observation/receive times, and explicit limits. It contains no token or account/device identifier.
 
-It also includes the [fresh official API trace](evidence/fresh-ring-evidence.json) from 19 October at 07:30:06.555 UTC. The fresh check returned one online Playground device and the same historical `on_demand` event. The application connection succeeded using an isolated database, retained the unknown classification, and footage/screens were captured for the demonstration. A 160-second narrated screen walkthrough is being assembled locally; no finished public video or submission is claimed.
+It also includes the [fresh official API trace](evidence/fresh-ring-evidence.json) from 19 October at 07:30:06.555 UTC. The fresh check returned one online Playground device and the same historical `on_demand` event. The application connection succeeded using an isolated database, retained the unknown classification, and footage/screens were captured for the demonstration. The English narrated walkthrough is complete and verified locally at 160 seconds; its file hash is recorded in [demo-script.md](demo-script.md). Public video upload remains pending. Devpost draft 1246362 has saved story, stack tags, source and gallery fields, but has not been submitted.
 
 | Evidence | What it establishes |
 | --- | --- |
