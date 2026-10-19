@@ -1,6 +1,6 @@
-# Submission draft — Handoff
+# Submission record — Handoff
 
-**Status:** Devpost draft **1246362** shows **four of five steps complete**, with story, stack tags, source, gallery, cover and video URL saved; the entry has not been submitted. The [draft preview](https://devpost.com/software/handoff-5f1j8d) displays the story, source and correct video embed. The [source repository is public](https://github.com/mosesfawole/handoff), with local evaluation instructions in the README, and the [160-second English narrated demonstration is published](https://youtu.be/LxP-aSjzIEY). Anonymous YouTube metadata access and watch-page playback start are verified. Final terms approval and submission remain pending. No hosted application is available. Use the preflight before final submission.
+**Status:** Devpost entry **1246362** was **submitted on 19 October 2026**, with story, stack tags, source, gallery, cover, video URL, required answers and source ZIP saved. Devpost displayed “Project submitted!” and lists the hackathon under “Submitted to.” The [public entry](https://devpost.com/software/handoff-5f1j8d) displays the story, source and correct video embed. The [source repository is public](https://github.com/mosesfawole/handoff), with local evaluation instructions in the README, and the [160-second English narrated demonstration is published](https://youtu.be/LxP-aSjzIEY). Anonymous YouTube metadata access and watch-page playback start are verified. The entrant accepted the final agreement and submission was confirmed. No hosted application is available; judges can evaluate the public source locally.
 
 **Tagline:** When a care visit is unconfirmed, make the next action somebody's responsibility.
 
@@ -49,6 +49,6 @@ No user interviews, pilots, clinical effects, adoption figures or willingness-to
 | AWS Builder mini challenge | Not claimed; no qualifying AWS/Kiro contribution established |
 | Open Source mini challenge | Not claimed; the main MIT license alone is not the additional identifiable contribution |
 
-Install/run instructions are in the README. No submission has been made, and no prize or track eligibility is guaranteed by this draft.
+Install/run instructions are in the README. Submission is confirmed; no prize or judging outcome is guaranteed.
 
 Fresh official API verification succeeded on 19 October 2026 at 07:30:06.555 UTC: one online Playground device returned the same `on_demand` event observed at 05:47:14.040 UTC. The application connection succeeded with isolated data, storing the event conservatively as unknown activity, and footage/screens were captured. The [sanitized trace](evidence/fresh-ring-evidence.json) records the API result. The narrated video is published on YouTube. This milestone does not establish a new motion event or a visitor.

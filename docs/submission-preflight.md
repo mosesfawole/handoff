@@ -9,13 +9,13 @@ Deadline: **23 October 2026, 19:00 UTC / 21:00 Europe/Berlin**. Use an internal 
 | Source access | [https://github.com/mosesfawole/handoff](https://github.com/mosesfawole/handoff) — public, MIT licensed, default branch `handoff-build`; source/assets/run instructions included |
 | Public video | [Published on YouTube](https://youtu.be/LxP-aSjzIEY), 2:40, with publication confirmed on 19 October 2026. YouTube's copyright check reported "No issues found". Anonymous metadata access and watch-page playback start are verified; the player reported 160.021 seconds. The local SHA-256 is recorded in [demo-script.md](demo-script.md) |
 | Evaluation access | Local evaluation from public source: follow [README setup](../README.md#run-locally) and run fictional replay without a judge-supplied token. No hosted public application yet; maintain source access through judging |
-| Description and stack | Saved in Devpost draft **1246362**, together with source, gallery, cover and video URL; the UI shows **four of five steps complete**. The [draft preview](https://devpost.com/software/handoff-5f1j8d) displays the story, source and correct video embed. Check the final saved entry against submission-draft.md before submitting |
-| Tracks/challenges | Confirm Ring selection. Do not claim AWS Builder or Open Source mini-challenge eligibility without their additional qualifying work |
+| Description and stack | Saved in [submitted Devpost entry **1246362**](https://devpost.com/software/handoff-5f1j8d), with source, gallery, cover, video URL and required answers. The rendered page displays the story, source and correct video embed |
+| Tracks/challenges | Ring selected; AWS Builder and Open Source mini-challenges are not entered |
 | Feedback fields | Technical additional-information fields are saved. Check their observed tool/API/SDK feedback against developer-feedback.md before submitting |
 | License and assets | MIT file included; verify all submitted source/assets and dependency notices are appropriate |
 | Sanitization | Inspect source archive entries: no populated `.env`, tokens, databases, node_modules, `.git`, logs, private media or personal receipts |
 | Final functional check | Clean install/build and four production/receipt/MCP/restart smoke checks passed; final full application verification passed. Match the distributed source ZIP to its accompanying manifest |
-| Final submission | **Pending final approval**. The Devpost draft is saved but unsubmitted. Check every URL/access setting, complete the final terms step with entrant approval, and obtain the entry confirmation before claiming submitted |
+| Final submission | **Confirmed 19 October 2026**. The entrant accepted the final agreement. Devpost displayed “Project submitted!” and the project page lists the hackathon under “Submitted to” |
 
 The four equally weighted criteria are technical implementation, design, potential impact and idea quality; technical implementation is the first tiebreaker. Specific developer friction may qualify for a bonus up to 10%, but no score is promised. One track prize and one mini-challenge prize may be awarded to an entry under the rules. Main-project licensing alone is not the additional Open Source contribution, and AWS credits/services are not assumed.
 
@@ -27,4 +27,4 @@ The four equally weighted criteria are technical implementation, design, potenti
 - [Strong submission tips](https://amazonappdev2026.devpost.com/updates/46538-strong-submission-tips)
 - [Ring API documentation](https://developer.amazon.com/docs/ring/api-documentation.html)
 
-Source and YouTube publication are complete; anonymous video metadata access and watch-page playback start are verified. The Devpost draft shows four of five steps complete, including its video URL. Any hosted demo URL, final eligibility/terms approval and final submission still require completion. This file is a checklist, not a submission or eligibility certificate.
+Source and YouTube publication are complete; anonymous video metadata access and watch-page playback start are verified. The Devpost submission is confirmed, including its video URL and uploaded source ZIP. No hosted application is claimed; source and video support evaluation. Keep both accessible through judging.
