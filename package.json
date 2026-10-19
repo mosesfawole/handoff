@@ -8,6 +8,7 @@
     "dev:server": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env --import tsx --watch server/index.ts",
     "dev:client": "vite --host 127.0.0.1 --port 5173 --strictPort",
     "test": "node --disable-warning=ExperimentalWarning node_modules/vitest/vitest.mjs",
+    "test:e2e": "playwright test",
     "typecheck": "tsc --noEmit",
     "build": "tsc --noEmit && vite build",
     "start": "node --disable-warning=ExperimentalWarning --env-file-if-exists=.env --import tsx server/index.ts"
@@ -20,6 +21,7 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@playwright/test": "^1.64.1",
     "@types/express": "^5.0.3",
     "@types/node": "^24.0.0",
     "@types/react": "^19.2.0",
