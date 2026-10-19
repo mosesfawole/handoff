@@ -4,7 +4,7 @@
 
 This is a locally runnable prototype with fictional replay, persistent SQLite records, family/resident/helper/coordinator demo views, a server-side Ring adapter, and a real Model Context Protocol (MCP) endpoint. A doorstep event never proves identity, completed care, or safety. Demo roles are views, not production authentication.
 
-Public source: [mosesfawole/handoff](https://github.com/mosesfawole/handoff), default branch `handoff-build`, under the MIT license. Evaluation is available by cloning or downloading the source and running the fictional replay locally; there is no hosted public application yet. A 160-second English narrated demonstration is complete locally. Public video upload remains pending. The Devpost draft has saved story, stack tags, source and gallery fields, but the entry has not been submitted.
+Public source: [mosesfawole/handoff](https://github.com/mosesfawole/handoff), default branch `handoff-build`, under the MIT license. Evaluation is available by cloning or downloading the source and running the fictional replay locally; there is no hosted public application yet. The [160-second English narrated demonstration is published on YouTube](https://youtu.be/LxP-aSjzIEY). Devpost draft 1246362 shows four of five steps complete, including the saved video URL; final approval and submission remain pending.
 
 ## Run locally
 
@@ -102,4 +102,4 @@ Browser tests start a separate replay server on 3101 and use `../../work/handoff
 - [Design decisions](docs/decisions.md), [approved design](DESIGN.md), and [implementation plan](IMPLEMENTATION.md)
 - [MIT license](LICENSE)
 
-There is no external messaging, emergency dispatch, medical assessment, facial recognition, production household authentication, deployed public host, or automatic Ring token renewal. User interviews, demand validation, and clinical outcomes have not been established. The source repository is public and the local demonstration video is complete; public video upload, hosting and final competition submission remain unfinished steps.
+There is no external messaging, emergency dispatch, medical assessment, facial recognition, production household authentication, deployed public host, or automatic Ring token renewal. User interviews, demand validation, and clinical outcomes have not been established. The source repository and demonstration video are published; anonymous YouTube metadata access and watch-page playback start are verified. Hosting and final competition submission remain unfinished steps.

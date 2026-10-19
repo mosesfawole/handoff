@@ -1,6 +1,6 @@
 # Submission draft — Handoff
 
-**Status:** Devpost draft **1246362** exists, with story, stack tags, source and gallery fields saved; the entry has not been submitted. [Draft preview](https://devpost.com/software/handoff-5f1j8d). The [source repository is public](https://github.com/mosesfawole/handoff), with local evaluation instructions in the README. A 160-second English narrated demonstration is complete locally, but public video upload and a hosted application remain unavailable. Use the preflight before final submission.
+**Status:** Devpost draft **1246362** shows **four of five steps complete**, with story, stack tags, source, gallery, cover and video URL saved; the entry has not been submitted. The [draft preview](https://devpost.com/software/handoff-5f1j8d) displays the story, source and correct video embed. The [source repository is public](https://github.com/mosesfawole/handoff), with local evaluation instructions in the README, and the [160-second English narrated demonstration is published](https://youtu.be/LxP-aSjzIEY). Anonymous YouTube metadata access and watch-page playback start are verified. Final terms approval and submission remain pending. No hosted application is available. Use the preflight before final submission.
 
 **Tagline:** When a care visit is unconfirmed, make the next action somebody's responsibility.
 
@@ -43,7 +43,7 @@ No user interviews, pilots, clinical effects, adoption figures or willingness-to
 | Project name | Handoff |
 | Main track | Ring proposed; confirm current entry requirements and final official API demonstration |
 | Repository | [https://github.com/mosesfawole/handoff](https://github.com/mosesfawole/handoff) — public, MIT licensed; default branch `handoff-build` |
-| Public English YouTube/Vimeo video under three minutes | **Pending public URL**; the English narrated screen walkthrough is complete and verified locally at 160 seconds. Upload remains blocked by the browser extension's file-URL access setting |
+| Public English YouTube/Vimeo video under three minutes | [Published YouTube video](https://youtu.be/LxP-aSjzIEY), 2:40. Publication, anonymous metadata access and watch-page playback start verified; the player reported 160.021 seconds |
 | Working evaluation access / demo URL and instructions | Clone/download the public source and follow [README setup](../README.md#run-locally). Fictional replay requires no Ring token. No hosted application URL is available |
 | Tools/API/SDK feedback | Use the specific entries in developer-feedback.md |
 | AWS Builder mini challenge | Not claimed; no qualifying AWS/Kiro contribution established |
@@ -51,4 +51,4 @@ No user interviews, pilots, clinical effects, adoption figures or willingness-to
 
 Install/run instructions are in the README. No submission has been made, and no prize or track eligibility is guaranteed by this draft.
 
-Fresh official API verification succeeded on 19 October 2026 at 07:30:06.555 UTC: one online Playground device returned the same `on_demand` event observed at 05:47:14.040 UTC. The application connection succeeded with isolated data, storing the event conservatively as unknown activity, and footage/screens were captured. The [sanitized trace](evidence/fresh-ring-evidence.json) records the API result. The local narrated video is complete; public upload remains unfinished. This milestone does not establish a new motion event or a visitor.
+Fresh official API verification succeeded on 19 October 2026 at 07:30:06.555 UTC: one online Playground device returned the same `on_demand` event observed at 05:47:14.040 UTC. The application connection succeeded with isolated data, storing the event conservatively as unknown activity, and footage/screens were captured. The [sanitized trace](evidence/fresh-ring-evidence.json) records the API result. The narrated video is published on YouTube. This milestone does not establish a new motion event or a visitor.
