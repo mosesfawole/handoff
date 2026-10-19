@@ -5,9 +5,9 @@ Deadline: **23 October 2026, 19:00 UTC / 21:00 Europe/Berlin**. Use an internal 
 | Item | Current state / final action |
 | --- | --- |
 | Working application | Local source/replay implemented; review corrections approved; final 29 unit tests, 13 browser tests and build/typecheck passed |
-| Required Ring technology | Official discovery/status/history and `on_demand` event ingestion evidenced. Fresh API footage awaits authorized Amazon sign-in and renewal of the expired Playground token; describe the actual event type accurately |
+| Required Ring technology | Fresh official check succeeded 19 October at 07:30:06.555 UTC; one online Playground device returned the same historical `on_demand` event. Isolated application connection and footage/screens captured; describe the event as unknown activity, not a new motion event or visitor |
 | Source access | [https://github.com/mosesfawole/handoff](https://github.com/mosesfawole/handoff) — public, MIT licensed, default branch `handoff-build`; source/assets/run instructions included |
-| Public video | **Pending URL**. Local preparation underway; final English YouTube/Vimeo video must be public and strictly under three minutes. Check signed-out access, audio and duration |
+| Public video | **Pending URL**. A 160-second narrated screen walkthrough is being assembled locally. Final English YouTube/Vimeo video must be public and strictly under three minutes; check signed-out access, audio and duration |
 | Evaluation access | Local evaluation from public source: follow [README setup](../README.md#run-locally) and run fictional replay without a judge-supplied token. No hosted public application yet; maintain source access through judging |
 | Description and stack | Review submission-draft.md against the final implementation; remove pending fields only when completed |
 | Tracks/challenges | Confirm Ring selection. Do not claim AWS Builder or Open Source mini-challenge eligibility without their additional qualifying work |

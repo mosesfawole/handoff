@@ -37,11 +37,14 @@ All three were corrected. The confirmation indicator now follows the effective s
 
 The package includes the [sanitized recovered integration trace](evidence/recovered-ring-evidence.json), with event type, observation/receive times, and explicit limits. It contains no token or account/device identifier.
 
+It also includes the [fresh official API trace](evidence/fresh-ring-evidence.json) from 19 October at 07:30:06.555 UTC. The fresh check returned one online Playground device and the same historical `on_demand` event. The application connection succeeded using an isolated database, retained the unknown classification, and footage/screens were captured for the demonstration. A 160-second narrated screen walkthrough is being assembled locally; no finished public video or submission is claimed.
+
 | Evidence | What it establishes |
 | --- | --- |
 | 18 October 2026, 16:49:02.694 UTC | Actual authenticated official discovery/status/history; one online Playground simulator device, empty history |
 | 19 October 2026, event at 05:47:14.040 UTC; saved app sync at 05:48:18.871 UTC | Official history `on_demand` event entered the separate live household as `source: ring`, `type: unknown`, preserving observation and receive times |
 | Saved official inspection at 05:51:24.186 UTC; recovery inspection at 06:05:28.869 UTC | Recovery cross-checked the sanitized official evidence and saved local live snapshot without making another Ring request |
+| Fresh official check at 07:30:06.555 UTC on 19 October 2026 | Successful discovery/status/history, one online Playground device, same `on_demand` event at 05:47:14.040 UTC; no claim of a newly generated motion event |
 
 This is authenticated event ingestion. It is **not** proof of motion, a visitor, completed care, physical-device use, clinical effectiveness, or a public webhook delivery. Unknown classification is deliberate. Webhook HMAC verification and malformed/expired-token boundaries also have local fixture tests; fixtures do not establish live delivery.
 

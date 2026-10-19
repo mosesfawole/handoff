@@ -43,7 +43,7 @@ No user interviews, pilots, clinical effects, adoption figures or willingness-to
 | Project name | Handoff |
 | Main track | Ring proposed; confirm current entry requirements and final official API demonstration |
 | Repository | [https://github.com/mosesfawole/handoff](https://github.com/mosesfawole/handoff) — public, MIT licensed; default branch `handoff-build` |
-| Public English YouTube/Vimeo video under three minutes | **Pending**; local video preparation is underway |
+| Public English YouTube/Vimeo video under three minutes | **Pending**; a 160-second narrated screen walkthrough is being assembled locally from captured footage |
 | Working evaluation access / demo URL and instructions | Clone/download the public source and follow [README setup](../README.md#run-locally). Fictional replay requires no Ring token. No hosted application URL is available |
 | Tools/API/SDK feedback | Use the specific entries in developer-feedback.md |
 | AWS Builder mini challenge | Not claimed; no qualifying AWS/Kiro contribution established |
@@ -51,4 +51,4 @@ No user interviews, pilots, clinical effects, adoption figures or willingness-to
 
 Install/run instructions are in the README. No submission has been made, and no prize or track eligibility is guaranteed by this draft.
 
-For fresh official API footage, the prior Playground token has expired and authorized Amazon sign-in/token renewal is required. The sanitized historical integration evidence remains valid; it is not a claim that a fresh video scene has been captured.
+Fresh official API verification succeeded on 19 October 2026 at 07:30:06.555 UTC: one online Playground device returned the same `on_demand` event observed at 05:47:14.040 UTC. The application connection succeeded with isolated data, storing the event conservatively as unknown activity, and footage/screens were captured. The [sanitized trace](evidence/fresh-ring-evidence.json) records the API result. Narrated-video assembly and public upload remain unfinished; this milestone does not establish a new motion event or a visitor.

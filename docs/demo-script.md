@@ -2,7 +2,7 @@
 
 This is a recording plan, not evidence that a video has been produced. Use fictional participants throughout and record the English narration with a public YouTube/Vimeo cut shorter than three minutes. Hide credentials and account details before recording.
 
-The official integration scene needs an actual capture. Recovered evidence shows an official `on_demand` history event ingested as `unknown` activity on 19 October; do not label it motion or a visitor. A fresh Playground token may be needed to record current API interaction. An unavailable or expired token is not a successful scene; do not substitute the homemade replay for the official simulator/API.
+Fresh official API verification succeeded on 19 October at 07:30:06.555 UTC, and actual integration footage/screens have been captured. The check returned one online Playground device and the same `on_demand` history event observed at 05:47:14.040 UTC; the isolated application retained its `unknown` classification. Do not label that event new motion or a visitor, or substitute the homemade replay for the official simulator/API. The 160-second narrated walkthrough is being assembled locally; final public video delivery remains pending. See the [sanitized fresh trace](evidence/fresh-ring-evidence.json).
 
 | Time | Screen action | Suggested narration |
 | --- | --- | --- |

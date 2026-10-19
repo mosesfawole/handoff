@@ -71,7 +71,7 @@ Obtain access through the [official Ring developer setup](https://developer.amaz
 
 `POST /api/webhooks/ring` verifies the raw JSON request body with HMAC-SHA256 and an `X-Signature: sha256=<hex>` header before normalization. Configure the matching shared secret and connect the live household first. Public HTTPS webhook hosting and automatic OAuth token refresh are not implemented; local signature/adapter tests do not demonstrate a public webhook delivery.
 
-Recovered official evidence confirms discovery/status/history and ingestion of one `on_demand` history event, conservatively stored as `unknown` activity. It does **not** prove motion, a doorstep visitor, completed care, or a public webhook. See [validation](docs/validation.md) and the [recording script](docs/demo-script.md).
+Official evidence confirms discovery/status/history and ingestion of one `on_demand` history event, conservatively stored as `unknown` activity. A fresh successful API check on 19 October 2026 at 07:30:06.555 UTC returned one online Playground device and that same historical event; the application connection was also verified with isolated data, and footage/screens were captured. This does **not** prove a new motion event, a doorstep visitor, completed care, or a public webhook. See [validation](docs/validation.md), the [sanitized fresh trace](docs/evidence/fresh-ring-evidence.json), and the [recording script](docs/demo-script.md).
 
 ### MCP
 

@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-19T07:30:06.555Z",
+  "officialApiBase": "https://api.amazonvision.com",
+  "deviceCount": 1,
+  "devices": [
+    {
+      "online": true,
+      "history": [
+        {
+          "eventType": "on_demand",
+          "observedAt": "2026-10-19T05:47:14.040Z"
+        }
+      ]
+    }
+  ],
+  "limitations": "Official API discovery/status/history. Not proof of a visitor, completed care, or public webhook delivery. Account, device and event identifiers excluded."
+}
